@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<f:view contentType="text/html">
+<h:head>
+	<f:facet name="first">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>PrimeFaces</title>
+	</f:facet>
+</h:head>
+<h:body>
+	<h:form id="eingabe">
+		<p:panelGrid columns="2">
+			<p:outputLabel
+				for="email" 
+				value="E-Mail:"/>		
+			<p:inputText
+				id="email" 
+				value="#{signinController.customer.email}"/>
+			<p:outputLabel
+				for="password" 
+				value="Kennwort:"/>	
+			<p:password
+				id="password" 
+				value="#{signinController.customer.password}"/>
+			<p:commandButton 
+				value="Anmelden" 
+				update="ausgabe"/>
+		</p:panelGrid>
+	</h:form>
+	<p:panelGrid columns="2" id="ausgabe">
+		<p:outputLabel
+			for="ausgabe1" 
+			value="E-Mail:"/>		
+		<p:outputLabel
+			id="ausgabe1" 
+			value="#{signinController.customer.email}"/>
+		<p:outputLabel
+			for="ausgabe2" 
+			value="Kennwort:"/>		
+		<p:outputLabel
+			id="ausgabe2" 
+			value="#{signinController.customer.password}"/>
+	</p:panelGrid>
+</h:body>
+</f:view>
+</html>

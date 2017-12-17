@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<f:view contentType="text/html">
+<h:head>
+	<f:facet name="first">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>Onlineshop</title>
+	</f:facet>
+</h:head>
+<h:body>
+	<p:panel 
+		toggleable="true" 
+		toggleSpeed="2000"
+		toggleTitle="Zu/Auf"
+		toggleOrientation="vertical"
+		collapsed="false"
+		closable="true"
+		closeSpeed="3000"
+		closeTitle="Entfernen"
+		widgetVar="meinPanel">
+		<f:facet name="header">
+			Onlineshop
+		</f:facet>
+		<h1>Willkommen im Onlineshop</h1>
+		<f:facet name="options">
+			<p:menu>
+				<p:submenu label="Optionen">
+					<p:menuitem
+						value="Auf/Zu"
+						url="#"
+						icon="ui-icon-arrow-2-n-s"
+						onclick="PF('meinPanel').toggle()"
+					/>
+					<p:menuitem
+						value="Entfernen"
+						url="#"
+						icon="ui-icon-close"
+						onclick="PF('meinPanel').close()"
+					/>
+				</p:submenu>
+			</p:menu>
+		</f:facet>
+		<f:facet name="footer">
+			Copyright
+		</f:facet>
+	</p:panel>
+</h:body>
+</f:view>
+</html>
